@@ -1,0 +1,12 @@
+{
+    "name": "net.j38.websockets.client",
+    "version": "0.0.1",
+    "displayName": "Unity WebSockets Client",
+    "description": "Unity websocket client using System.Net.WebSockets.",
+    "unity": "2019.4",
+    "author": {
+        "name": "Scott Garner",
+        "email": "hello@scottmadethis.net",
+        "url": "https://scottmadethis.net/"
+    }
+}
