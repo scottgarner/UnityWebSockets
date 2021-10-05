@@ -8,5 +8,12 @@
         "name": "Scott Garner",
         "email": "hello@scottmadethis.net",
         "url": "https://scottmadethis.net/"
-    }
+    },
+    "samples": [
+        {
+            "displayName": "Client Send and Receive",
+            "description": "WebSockets Client send and receive test.",
+            "path": "Samples~/SendReceive"
+        }
+    ]
 }
