@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 
 namespace J38.WebSockets.Client
 {
-    public class WebSocketClient
+    public class WebSocketClient : IDisposable
     {
         public delegate void ConnectAction();
         public event ConnectAction OnConnected;
@@ -31,8 +31,15 @@ namespace J38.WebSockets.Client
             }
         }
 
-        ~WebSocketClient()
+        public void Dispose()
         {
+            Debug.Log("<color=cyan>WebSocket dispose.</color>");
+            Disconnect();
+        }
+
+        public void Disconnect()
+        {
+            Debug.Log("<color=cyan>WebSocket disconnecting.</color>");
             if (cancellationTokenSource != null)
             {
                 cancellationTokenSource.Cancel();
@@ -67,7 +74,7 @@ namespace J38.WebSockets.Client
                         }
                         catch (OperationCanceledException)
                         {
-                            Debug.Log("<color=cyan>WebSocket shutting down.</color>");
+                            Debug.Log("<color=cyan>WebSocket connection cancelled.</color>");
                         }
                         catch (WebSocketException)
                         {

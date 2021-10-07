@@ -23,4 +23,9 @@ public class SendReceive : MonoBehaviour
         };
 
     }
+
+    void OnDestroy()
+    {
+        webSocketClient.Disconnect();
+    }
 }
